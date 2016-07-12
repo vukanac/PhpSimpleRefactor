@@ -1,5 +1,5 @@
 [
     {
-        "keys": ["ctrl+alt+r"], "command": "php_simple_refactor_extract_method"
+        "keys": ["ctrl+alt+r"], "command": "wukanac_php_simple_refactor_extract_method"
     }
 ]

@@ -4,7 +4,7 @@ import tempfile
 import os
 import abc
 
-class PhpSimpleRefactorBaseCommand(sublime_plugin.TextCommand):
+class WukanacPhpSimpleRefactorBaseCommand(sublime_plugin.TextCommand):
 	__metaclass__ = abc.ABCMeta
 
 	def run(self, edit):
@@ -42,7 +42,12 @@ class PhpSimpleRefactorBaseCommand(sublime_plugin.TextCommand):
 			fp = tempfile.NamedTemporaryFile(delete=False)
 			fp.write(output)
 			fp.close()
-			cmd = ''.join(['patch -p1 "',self.file_name,'" "',fp.name,'"'])
+			
+			settings = sublime.load_settings('WukanacPhpSimpleRefactor.sublime-settings')
+			self.patch_path = settings.get('patch_path')
+			self.patch_opts = settings.get('patch_opts')
+			cmd = ''.join([self.patch_path, ' ', self.patch_opts, ' -p1 "',self.file_name,'" "',fp.name,'"'])
+			print(cmd)
 			pr = subprocess.Popen(cmd, shell=True, bufsize=-1, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 			output, error = pr.communicate()
 			os.remove(fp.name)

@@ -1,4 +1,4 @@
-PHPSimpleRefactor for Sublime Text
+WukanacPhpSimpleRefactor for Sublime Text
 ===========
 
 A simple way to integrate [PHP Refactoring Browser]'s method extraction in Sublime Text 3 
@@ -15,24 +15,26 @@ The package is available on [Package Control](https://sublime.wbond.net/).
 
 Configuration
 =======
-Edit the file PHPSimpleRefactor.sublime-settings (Preferences > Package Settings > PHPSimpleRefactor > Settings – User) with the correct php_path and refactor_path.
+Edit the file WukanacPhpSimpleRefactor.sublime-settings (Preferences > Package Settings > WukanacPhpSimpleRefactor > Settings – User) with the correct php_path and refactor_path.
 
 Example:
 	
-	/** FILE: PHPSimpleRefactor.sublime-settings **/
+	/** FILE: WukanacPhpSimpleRefactor.sublime-settings **/
 
 	{
 		"php_path" : "/Applications/MAMP/bin/php/php5.5.3/bin/PHP",
-		"refactor_path" : "/usr/local/bin/refactor" 
+		"refactor_path" : "/usr/local/bin/refactor",
+		"patch_path" : "patch",
+		"patch_opts" : "--binary",
 	}
 
 Usage
 =====
 There are two functionalities:
 
-**Extract method:** Select the lines that you'd like to extract to a new method, and use the shortcut **ctrl+alt+r** (or right click on the text and select "**PHPSimpleRefactor -> Extract method**"). The plugin will ask you for the method name to use. 
+**Extract method:** Select the lines that you'd like to extract to a new method, and use the shortcut **ctrl+alt+r** (or right click on the text and select "**WukanacPhpSimpleRefactor -> Extract method**"). The plugin will ask you for the method name to use. 
 
-**Rename local variable:** Right click inside the scope that contains the local variable that you want to rename and select "**PHPSimpleRefactor -> Rename local variable**". The plugin will ask you for the variable old name and the new name.
+**Rename local variable:** Right click inside the scope that contains the local variable that you want to rename and select "**WukanacPhpSimpleRefactor -> Rename local variable**". The plugin will ask you for the variable old name and the new name.
 
 
 License

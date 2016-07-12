@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "WukanacPhpSimpleRefactor: extract current lines to method",
+        "command": "wukanac_php_simple_refactor_extract_method"
+    },
+    {
+        "caption": "WukanacPhpSimpleRefactor: renames a local variable",
+        "command": "wukanac_php_simple_refactor_rename_local_variable"
+    }
+]
