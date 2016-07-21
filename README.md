@@ -41,6 +41,12 @@ Example:
 		"patch_opts" : "--binary",
 	}
 
+For key short-cut, in `Preferences > Key Bindings - User` add this line:
+	[
+		{ "keys": ["alt+shift+e"], "command": "wukanac_php_simple_refactor_extract_method" }
+	]
+
+
 Usage
 =====
 There are two functionalities:
