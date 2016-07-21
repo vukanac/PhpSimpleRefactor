@@ -11,7 +11,20 @@ You need to have PHP installed and [PHP Refactoring Browser]'s refactor.phar fil
 
 Installation
 =======
-The package is available on [Package Control](https://sublime.wbond.net/).
+
+--The package is available on [Package Control](https://sublime.wbond.net/).--
+
+* In Sublime Text Editor,
+* Open > Preferences
+* Open > Browse Packages
+
+In that folder open terminal and clone repo:
+
+    git clone https://github.com/vukanac/PhpSimpleRefactor.git WukanacPhpSimpleRefactor
+    cd WukanacPhpSimpleRefactor
+    git checkout feature/config-patch-tool
+
+Patch tool should be configurable for Windows user, as it is suggested to use `--binay` flag.
 
 Configuration
 =======
@@ -22,8 +35,8 @@ Example:
 	/** FILE: WukanacPhpSimpleRefactor.sublime-settings **/
 
 	{
-		"php_path" : "/Applications/MAMP/bin/php/php5.5.3/bin/PHP",
-		"refactor_path" : "/usr/local/bin/refactor",
+		"php_path" : "",
+		"refactor_path" : "/home/dev/bin/refactor.phar",
 		"patch_path" : "patch",
 		"patch_opts" : "--binary",
 	}
