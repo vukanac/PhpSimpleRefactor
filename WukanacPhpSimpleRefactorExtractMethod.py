@@ -23,6 +23,7 @@ class WukanacPhpSimpleRefactorExtractMethodCommand(WukanacPhpSimpleRefactorBaseC
 		self.patch_path = settings.get('patch_path')
 		self.patch_opts = settings.get('patch_opts')
 		rows = ''.join([str(self.rowBegin), "-", str(self.rowEnd)])
+		# php refactor.phar extract-method <file> <line-range> <new-method>
 		cmd = ''.join([self.php_path, ' "', self.refactor_path,'" ',  'extract-method', ' "', self.file_name, '" ', rows, ' ', self.function_name])
 		print(cmd)
 		return subprocess.Popen(cmd, shell=True, bufsize=-1, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)

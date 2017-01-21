@@ -55,6 +55,11 @@ There are two functionalities:
 
 **Rename local variable:** Right click inside the scope that contains the local variable that you want to rename and select "**WukanacPhpSimpleRefactor -> Rename local variable**". The plugin will ask you for the variable old name and the new name.
 
+Resources
+---------
+
+[Refactoring browser (txt)](https://qafoo.com/blog/041_refactoring_browser.txt)
+
 
 License
 ----

@@ -26,6 +26,7 @@ class WukanacPhpSimpleRefactorRenameLocalVariableCommand(WukanacPhpSimpleRefacto
 		self.refactor_path = settings.get('refactor_path')
 		
 		rows = str(self.rowBegin)
+		# php refactor.phar rename-local-variable <file> <line> <old-name> <new-name>
 		cmd = ''.join([self.php_path, ' "', self.refactor_path,'" ',  'rename-local-variable', ' "', self.file_name, '" ', rows, ' ', self.old_name, ' ', self.new_name])
 		print(cmd)
 		return subprocess.Popen(cmd, shell=True, bufsize=-1, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
