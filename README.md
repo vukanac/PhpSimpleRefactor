@@ -1,38 +1,115 @@
-PHPSimpleRefactor for Sublime Text
-===========
+WukanacPhpSimpleRefactor for Sublime Text
+=========================================
 
 A simple way to integrate [PHP Refactoring Browser]'s method extraction in Sublime Text 3 
 
----
-
 Requirements
-===========
-You need to have PHP installed and [PHP Refactoring Browser]'s refactor.phar file. 
+------------
+
+### refactor.phar
+
+You need to have PHP installed and [PHP Refactoring Browser]'s `refactor.phar` file.
+
+Download `refactor.phar`, eg. in:
+
+* `d:\bin\` for Win,
+* `~/bin/`  for OsX or Linux.
+
+Add `bin/` to `PATH`.
+
+Must be executable.
+
+### patch
+
+To use refactor you also need `patch` on your system.
+
+Check it with:
+
+    $ which patch
+
+If you are Windows user you will have to specify `patch` command path.
+
+When you are using Git Bash it's located at:
+
+    c:/Users/<Your User Name>/AppData/Local/Programs/Git/usr/bin/patch.exe
+
+
+Or download `patch.exe` binary to your desired location.
+
 
 Installation
-=======
-The package is available on [Package Control](https://sublime.wbond.net/).
+------------
+
+--The package (PhpSimpleRefactor) is available on [Package Control](https://sublime.wbond.net/).--
+
+* In Sublime Text Editor,
+* Open > Preferences
+* Open > Browse Packages
+
+Folder should be `/Sublime Text 3/Packages/`.
+
+In that folder open terminal and clone repo:
+
+    git clone https://github.com/vukanac/PhpSimpleRefactor.git WukanacPhpSimpleRefactor
+    cd WukanacPhpSimpleRefactor
+
+Patch tool should be configurable for Windows user, as it is suggested to use `--binay` flag.
+
 
 Configuration
-=======
-Edit the file PHPSimpleRefactor.sublime-settings (Preferences > Package Settings > PHPSimpleRefactor > Settings – User) with the correct php_path and refactor_path.
+------------
+
+Edit the file WukanacPhpSimpleRefactor.sublime-settings,  
+[Preferences > Package Settings > WukanacPhpSimpleRefactor > Settings – User]  
+with the correct:
 
 Example:
-	
-	/** FILE: PHPSimpleRefactor.sublime-settings **/
 
-	{
-		"php_path" : "/Applications/MAMP/bin/php/php5.5.3/bin/PHP",
-		"refactor_path" : "/usr/local/bin/refactor" 
-	}
+    /** FILE: WukanacPhpSimpleRefactor.sublime-settings **/
+    {
+        "php_path" : "",
+        "refactor_path" : "/home/dev/bin/refactor.phar",
+        "patch_path" : "patch",
+        "patch_opts" : "--binary",
+    }
+
+If php is globaly accessible `php_path` can be left empty.
+
+Parameter `refactor_path` can contains only `patch` if you have `patch` in PATH.
+
+Parameter `patch_path` can contains only `patch` if you have `patch` in PATH.
+
+
+For key short-cut, in `Preferences > Key Bindings - User` add this line:
+
+    [
+        { "keys": ["ctrl+shift+e"], "command": "wukanac_php_simple_refactor_extract_method" },
+        { "keys": ["ctrl+shift+r"], "command": "wukanac_php_simple_refactor_rename_local_variable" },
+        { "keys": ["ctrl+shift+i"], "command": "wukanac_php_simple_refactor_convert_local_to_instance_variable" }
+    ]
+
+
+
 
 Usage
 =====
 There are two functionalities:
 
-**Extract method:** Select the lines that you'd like to extract to a new method, and use the shortcut **ctrl+alt+r** (or right click on the text and select "**PHPSimpleRefactor -> Extract method**"). The plugin will ask you for the method name to use. 
+**Extract method:** Select the lines that you'd like to extract to a new method,
+and use the shortcut **`ctrl+shift+e`**
+(or right click on the text and select "**WukanacPhpSimpleRefactor -> Extract method**").
+The plugin will ask you for the method name to use. 
 
-**Rename local variable:** Right click inside the scope that contains the local variable that you want to rename and select "**PHPSimpleRefactor -> Rename local variable**". The plugin will ask you for the variable old name and the new name.
+**Rename local variable:** Right click inside the scope that contains the local variable that you want to rename and select "**WukanacPhpSimpleRefactor -> Rename local variable**".
+The plugin will ask you for the variable old name and the new name.
+
+**Convert local to instance variable:** Right click inside the scope that contains the local variable that you want to rename and select "**WukanacPhpSimpleRefactor -> Convert local to instance variable**".
+The plugin will ask you for the variable name.
+
+Resources
+---------
+
+[Refactoring browser (txt)](https://qafoo.com/blog/041_refactoring_browser.txt)
 
 
 License

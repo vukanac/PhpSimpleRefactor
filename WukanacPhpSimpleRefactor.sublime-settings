@@ -1,0 +1,6 @@
+{
+    "php_path": "php",
+    "refactor_path": "d:\\bin\\refactor.phar",
+    "patch_path": "patch",
+    "patch_opts": "--binary"
+}
