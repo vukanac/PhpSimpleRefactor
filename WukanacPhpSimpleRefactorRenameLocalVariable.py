@@ -3,9 +3,9 @@ import subprocess
 import tempfile
 import os
 
-from PhpSimpleRefactor.PhpSimpleRefactorCommand import PhpSimpleRefactorBaseCommand
+from WukanacPhpSimpleRefactor.WukanacPhpSimpleRefactorBase import WukanacPhpSimpleRefactorBaseCommand
 
-class PhpSimpleRefactorRenameLocalVariableCommand(PhpSimpleRefactorBaseCommand):
+class WukanacPhpSimpleRefactorRenameLocalVariableCommand(WukanacPhpSimpleRefactorBaseCommand):
 	old_name = '';
 	new_name = '';
 
@@ -21,9 +21,12 @@ class PhpSimpleRefactorRenameLocalVariableCommand(PhpSimpleRefactorBaseCommand):
 		self.on_filled_info()
 
 	def get_command(self):
-		settings = sublime.load_settings('PHPSimpleRefactor.sublime-settings')
+		settings = sublime.load_settings('WukanacPhpSimpleRefactor.sublime-settings')
 		self.php_path = settings.get('php_path')
 		self.refactor_path = settings.get('refactor_path')
+		
 		rows = str(self.rowBegin)
+		# php refactor.phar rename-local-variable <file> <line> <old-name> <new-name>
 		cmd = ''.join([self.php_path, ' "', self.refactor_path,'" ',  'rename-local-variable', ' "', self.file_name, '" ', rows, ' ', self.old_name, ' ', self.new_name])
+		print(cmd)
 		return subprocess.Popen(cmd, shell=True, bufsize=-1, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)

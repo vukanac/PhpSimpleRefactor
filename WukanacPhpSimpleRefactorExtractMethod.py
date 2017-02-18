@@ -4,9 +4,9 @@ import tempfile
 import os
 import sys
 
-from PhpSimpleRefactor.PhpSimpleRefactorCommand import PhpSimpleRefactorBaseCommand
+from WukanacPhpSimpleRefactor.WukanacPhpSimpleRefactorBase import WukanacPhpSimpleRefactorBaseCommand
 
-class PhpSimpleRefactorExtractMethodCommand(PhpSimpleRefactorBaseCommand):
+class WukanacPhpSimpleRefactorExtractMethodCommand(WukanacPhpSimpleRefactorBaseCommand):
 	function_name = ''
 
 	def process(self):
@@ -17,10 +17,13 @@ class PhpSimpleRefactorExtractMethodCommand(PhpSimpleRefactorBaseCommand):
 		self.on_filled_info()
 
 	def get_command(self):
-		settings = sublime.load_settings('PHPSimpleRefactor.sublime-settings')
+		settings = sublime.load_settings('WukanacPhpSimpleRefactor.sublime-settings')
 		self.php_path = settings.get('php_path')
 		self.refactor_path = settings.get('refactor_path')
+		self.patch_path = settings.get('patch_path')
+		self.patch_opts = settings.get('patch_opts')
 		rows = ''.join([str(self.rowBegin), "-", str(self.rowEnd)])
+		# php refactor.phar extract-method <file> <line-range> <new-method>
 		cmd = ''.join([self.php_path, ' "', self.refactor_path,'" ',  'extract-method', ' "', self.file_name, '" ', rows, ' ', self.function_name])
 		print(cmd)
 		return subprocess.Popen(cmd, shell=True, bufsize=-1, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)

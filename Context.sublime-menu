@@ -1,14 +1,18 @@
 [{
-    "caption": "PHPSimpleRefactor",
+    "caption": "WukanacPhpSimpleRefactor",
     "children":
     [
         {
     	   "caption": "Extract method",
-    	   "command": "php_simple_refactor_extract_method"
+    	   "command": "wukanac_php_simple_refactor_extract_method"
         },
         {
            "caption": "Rename local variable",
-           "command": "php_simple_refactor_rename_local_variable"
+           "command": "wukanac_php_simple_refactor_rename_local_variable"
+        },
+        {
+           "caption": "Convert local to instance variable",
+           "command": "wukanac_php_simple_refactor_convert_local_to_instance_variable"
         }
     ]
 }]
