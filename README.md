@@ -52,7 +52,6 @@ In that folder open terminal and clone repo:
 
     git clone https://github.com/vukanac/PhpSimpleRefactor.git WukanacPhpSimpleRefactor
     cd WukanacPhpSimpleRefactor
-    git checkout feature/config-patch-tool
 
 Patch tool should be configurable for Windows user, as it is suggested to use `--binay` flag.
 
