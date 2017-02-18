@@ -1,5 +1,8 @@
 [
     {
-        "keys": ["ctrl+alt+r"], "command": "wukanac_php_simple_refactor_extract_method"
+        "keys": ["ctrl+shift+e"], "command": "wukanac_php_simple_refactor_extract_method"
+    },
+    {
+        "keys": ["ctrl+shift+r"], "command": "wukanac_php_simple_refactor_rename_local_variable"
     }
 ]
