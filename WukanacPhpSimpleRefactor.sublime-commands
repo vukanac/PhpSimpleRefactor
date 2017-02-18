@@ -6,5 +6,9 @@
     {
         "caption": "WukanacPhpSimpleRefactor: renames a local variable",
         "command": "wukanac_php_simple_refactor_rename_local_variable"
+    },
+    {
+        "caption": "WukanacPhpSimpleRefactor: converts a local to instance variable",
+        "command": "wukanac_php_simple_refactor_convert_local_to_instance_variable"
     }
 ]

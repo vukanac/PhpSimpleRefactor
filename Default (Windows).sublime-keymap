@@ -4,5 +4,8 @@
     },
     {
         "keys": ["ctrl+shift+r"], "command": "wukanac_php_simple_refactor_rename_local_variable"
+    },
+    {
+        "keys": ["ctrl+shift+i"], "command": "wukanac_php_simple_refactor_convert_local_to_instance_variable"
     }
 ]

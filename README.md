@@ -85,7 +85,8 @@ For key short-cut, in `Preferences > Key Bindings - User` add this line:
 
     [
         { "keys": ["ctrl+shift+e"], "command": "wukanac_php_simple_refactor_extract_method" },
-        { "keys": ["ctrl+shift+r"], "command": "wukanac_php_simple_refactor_rename_local_variable" }
+        { "keys": ["ctrl+shift+r"], "command": "wukanac_php_simple_refactor_rename_local_variable" },
+        { "keys": ["ctrl+shift+i"], "command": "wukanac_php_simple_refactor_convert_local_to_instance_variable" }
     ]
 
 
@@ -102,6 +103,9 @@ The plugin will ask you for the method name to use.
 
 **Rename local variable:** Right click inside the scope that contains the local variable that you want to rename and select "**WukanacPhpSimpleRefactor -> Rename local variable**".
 The plugin will ask you for the variable old name and the new name.
+
+**Convert local to instance variable:** Right click inside the scope that contains the local variable that you want to rename and select "**WukanacPhpSimpleRefactor -> Convert local to instance variable**".
+The plugin will ask you for the variable name.
 
 Resources
 ---------
